@@ -134,8 +134,7 @@ streamlit run prosody_tts_emotions.py
 # ------------------------------------------------------------
 # LICENSE
 # ------------------------------------------------------------
-# This repository is made available for research and
-# academic purposes only.
+# This repository is currently available only in Tamil and is being fine-tuned. Work in progress.
 #
 # © 2025 Shiv Nadar University Chennai.
 # All Rights Reserved.
