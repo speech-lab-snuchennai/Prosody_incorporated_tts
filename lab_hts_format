@@ -1,0 +1,45 @@
+#!/bin/tcsh -f
+
+# Define Aliases for Math
+alias MATH 'set \!:1 = `echo "\!:3-$" | bc -l`'
+alias ROUND 'set \!:1 = `echo "scale=3;\!:3-$" | bc -l`'
+
+# Argument Check
+if ($# != 2) then
+    echo "Usage: $0 phn_file output_folder"
+    exit 1
+endif
+
+# Initialize Loop
+set j = 1
+set tot_pi = `wc -l < $1`
+
+while ($j <= $tot_pi)
+    set a = `sed -n "${j}p" $1`
+    set b = `basename "$a" .phn`
+    
+    echo $b
+    set count = `wc -l < "$a"`
+    set start1 = 1
+
+    # Output file path
+    set out_file = "try_out/$b"
+
+    # Ensure the file starts with "#"
+    echo "#" > $out_file
+
+    while ($start1 <= $count)
+        # Extract end_time and phn correctly
+        set line_data = `sed -n "${start1}p" "$a"`
+        set end_time = `echo $line_data | awk '{print $2}'`  # Assuming end_time is in column 2
+        set phn = `echo $line_data | awk '{print $3}'`  # Assuming phoneme is in column 3
+
+        # Append data to file
+        echo "$end_time 100 $phn" >> $out_file
+
+        @ start1 = $start1 + 1
+    end
+
+    @ j = $j + 1
+end
+

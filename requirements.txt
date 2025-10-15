@@ -1,0 +1,42 @@
+#########################Prosody#############
+Required Python Packages:
+
+streamlit
+pyparsing
+praat-parselmouth
+flask
+requests
+torch
+espnet
+matplotlib
+pandas
+indic-num2words
+gunicorn
+torchaudio
+seaborn
+##############################################
+# Prosody-Incorporated TTS Environment Setup #
+##############################################
+
+# 1. Navigate to the FastSpeech2 folder
+cd Fastspeech2_HS
+
+# 2. Create a new conda environment from the YAML file
+conda env create -f environment.yml
+
+# 3. Activate the environment
+conda activate tts-hs-hifigan
+
+# 4. Install PyTorch and CUDA Toolkit
+conda install pytorch cudatoolkit -c pytorch
+
+# 5. Install torchaudio
+pip install torchaudio
+
+# 6. Install additional required Python packages
+pip install streamlit praat-parselmouth flask requests espnet matplotlib pandas indic-num2words gunicorn
+
+# 7. Go back to the main project directory
+cd ../
+
+#Environment setup complete for Prosody-Incorporated TTS
