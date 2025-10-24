@@ -1,0 +1,457 @@
+# python3 -m espnet2.bin.tts_train --use_preprocessor true --token_type char --token_list dump/token_list/char_None/tokens.txt --non_linguistic_symbols none --cleaner None --g2p g2p_en_no_space --normalize global_mvn --resume true --fold_length 150 --fold_length 819200 --output_dir exp/tts_train_fastspeech2_raw_char_None --config conf/tuning/train_fastspeech2.yaml --train_data_path_and_name_and_type dump/raw/tr_no_dev/text,text,text --train_data_path_and_name_and_type /home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/tr_no_dev/durations,durations,text_int --train_shape_file exp/tts_stats_raw_char_None/train/text_shape.char --valid_data_path_and_name_and_type dump/raw/dev/text,text,text --valid_data_path_and_name_and_type /home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/dev/durations,durations,text_int --valid_shape_file exp/tts_stats_raw_char_None/valid/text_shape.char --feats_extract fbank --feats_extract_conf n_fft=8192 --feats_extract_conf hop_length=1024 --feats_extract_conf win_length=4096 --feats_extract_conf fs=48000 --feats_extract_conf fmin=0 --feats_extract_conf fmax=24000 --feats_extract_conf n_mels=160 --train_data_path_and_name_and_type dump/raw/tr_no_dev/wav.scp,speech,sound --train_shape_file exp/tts_stats_raw_char_None/train/speech_shape --valid_data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --valid_shape_file exp/tts_stats_raw_char_None/valid/speech_shape --train_data_path_and_name_and_type exp/tts_stats_raw_char_None/train/collect_feats/pitch.scp,pitch,npy --valid_data_path_and_name_and_type exp/tts_stats_raw_char_None/valid/collect_feats/pitch.scp,pitch,npy --train_data_path_and_name_and_type exp/tts_stats_raw_char_None/train/collect_feats/energy.scp,energy,npy --valid_data_path_and_name_and_type exp/tts_stats_raw_char_None/valid/collect_feats/energy.scp,energy,npy --pitch_extract_conf fs=48000 --pitch_extract_conf n_fft=8192 --pitch_extract_conf hop_length=1024 --pitch_extract_conf f0max=350 --pitch_extract_conf f0min=40 --pitch_normalize_conf stats_file=exp/tts_stats_raw_char_None/train/pitch_stats.npz --energy_extract_conf fs=48000 --energy_extract_conf n_fft=8192 --energy_extract_conf hop_length=1024 --energy_extract_conf win_length=4096 --energy_normalize_conf stats_file=exp/tts_stats_raw_char_None/train/energy_stats.npz --normalize_conf stats_file=exp/tts_stats_raw_char_None/train/feats_stats.npz --ngpu 1 --multiprocessing_distributed True 
+# Started at Wed Aug  6 09:24:29 IST 2025
+#
+Vocabulary size: 61
+encoder self-attention layer type = self-attention
+encoder self-attention layer type = self-attention
+Initialize encoder.encoders.0.self_attn.linear_q.bias to zeros
+Initialize encoder.encoders.0.self_attn.linear_k.bias to zeros
+Initialize encoder.encoders.0.self_attn.linear_v.bias to zeros
+Initialize encoder.encoders.0.self_attn.linear_out.bias to zeros
+Initialize encoder.encoders.0.feed_forward.w_1.bias to zeros
+Initialize encoder.encoders.0.feed_forward.w_2.bias to zeros
+Initialize encoder.encoders.0.norm1.bias to zeros
+Initialize encoder.encoders.0.norm2.bias to zeros
+Initialize encoder.encoders.1.self_attn.linear_q.bias to zeros
+Initialize encoder.encoders.1.self_attn.linear_k.bias to zeros
+Initialize encoder.encoders.1.self_attn.linear_v.bias to zeros
+Initialize encoder.encoders.1.self_attn.linear_out.bias to zeros
+Initialize encoder.encoders.1.feed_forward.w_1.bias to zeros
+Initialize encoder.encoders.1.feed_forward.w_2.bias to zeros
+Initialize encoder.encoders.1.norm1.bias to zeros
+Initialize encoder.encoders.1.norm2.bias to zeros
+Initialize encoder.encoders.2.self_attn.linear_q.bias to zeros
+Initialize encoder.encoders.2.self_attn.linear_k.bias to zeros
+Initialize encoder.encoders.2.self_attn.linear_v.bias to zeros
+Initialize encoder.encoders.2.self_attn.linear_out.bias to zeros
+Initialize encoder.encoders.2.feed_forward.w_1.bias to zeros
+Initialize encoder.encoders.2.feed_forward.w_2.bias to zeros
+Initialize encoder.encoders.2.norm1.bias to zeros
+Initialize encoder.encoders.2.norm2.bias to zeros
+Initialize encoder.encoders.3.self_attn.linear_q.bias to zeros
+Initialize encoder.encoders.3.self_attn.linear_k.bias to zeros
+Initialize encoder.encoders.3.self_attn.linear_v.bias to zeros
+Initialize encoder.encoders.3.self_attn.linear_out.bias to zeros
+Initialize encoder.encoders.3.feed_forward.w_1.bias to zeros
+Initialize encoder.encoders.3.feed_forward.w_2.bias to zeros
+Initialize encoder.encoders.3.norm1.bias to zeros
+Initialize encoder.encoders.3.norm2.bias to zeros
+Initialize encoder.after_norm.bias to zeros
+Initialize duration_predictor.conv.0.0.bias to zeros
+Initialize duration_predictor.conv.0.2.bias to zeros
+Initialize duration_predictor.conv.1.0.bias to zeros
+Initialize duration_predictor.conv.1.2.bias to zeros
+Initialize duration_predictor.linear.bias to zeros
+Initialize pitch_predictor.conv.0.0.bias to zeros
+Initialize pitch_predictor.conv.0.2.bias to zeros
+Initialize pitch_predictor.conv.1.0.bias to zeros
+Initialize pitch_predictor.conv.1.2.bias to zeros
+Initialize pitch_predictor.conv.2.0.bias to zeros
+Initialize pitch_predictor.conv.2.2.bias to zeros
+Initialize pitch_predictor.conv.3.0.bias to zeros
+Initialize pitch_predictor.conv.3.2.bias to zeros
+Initialize pitch_predictor.conv.4.0.bias to zeros
+Initialize pitch_predictor.conv.4.2.bias to zeros
+Initialize pitch_predictor.linear.bias to zeros
+Initialize pitch_embed.0.bias to zeros
+Initialize energy_predictor.conv.0.0.bias to zeros
+Initialize energy_predictor.conv.0.2.bias to zeros
+Initialize energy_predictor.conv.1.0.bias to zeros
+Initialize energy_predictor.conv.1.2.bias to zeros
+Initialize energy_predictor.linear.bias to zeros
+Initialize energy_embed.0.bias to zeros
+Initialize decoder.encoders.0.self_attn.linear_q.bias to zeros
+Initialize decoder.encoders.0.self_attn.linear_k.bias to zeros
+Initialize decoder.encoders.0.self_attn.linear_v.bias to zeros
+Initialize decoder.encoders.0.self_attn.linear_out.bias to zeros
+Initialize decoder.encoders.0.feed_forward.w_1.bias to zeros
+Initialize decoder.encoders.0.feed_forward.w_2.bias to zeros
+Initialize decoder.encoders.0.norm1.bias to zeros
+Initialize decoder.encoders.0.norm2.bias to zeros
+Initialize decoder.encoders.1.self_attn.linear_q.bias to zeros
+Initialize decoder.encoders.1.self_attn.linear_k.bias to zeros
+Initialize decoder.encoders.1.self_attn.linear_v.bias to zeros
+Initialize decoder.encoders.1.self_attn.linear_out.bias to zeros
+Initialize decoder.encoders.1.feed_forward.w_1.bias to zeros
+Initialize decoder.encoders.1.feed_forward.w_2.bias to zeros
+Initialize decoder.encoders.1.norm1.bias to zeros
+Initialize decoder.encoders.1.norm2.bias to zeros
+Initialize decoder.encoders.2.self_attn.linear_q.bias to zeros
+Initialize decoder.encoders.2.self_attn.linear_k.bias to zeros
+Initialize decoder.encoders.2.self_attn.linear_v.bias to zeros
+Initialize decoder.encoders.2.self_attn.linear_out.bias to zeros
+Initialize decoder.encoders.2.feed_forward.w_1.bias to zeros
+Initialize decoder.encoders.2.feed_forward.w_2.bias to zeros
+Initialize decoder.encoders.2.norm1.bias to zeros
+Initialize decoder.encoders.2.norm2.bias to zeros
+Initialize decoder.encoders.3.self_attn.linear_q.bias to zeros
+Initialize decoder.encoders.3.self_attn.linear_k.bias to zeros
+Initialize decoder.encoders.3.self_attn.linear_v.bias to zeros
+Initialize decoder.encoders.3.self_attn.linear_out.bias to zeros
+Initialize decoder.encoders.3.feed_forward.w_1.bias to zeros
+Initialize decoder.encoders.3.feed_forward.w_2.bias to zeros
+Initialize decoder.encoders.3.norm1.bias to zeros
+Initialize decoder.encoders.3.norm2.bias to zeros
+Initialize decoder.after_norm.bias to zeros
+Initialize feat_out.bias to zeros
+Initialize postnet.postnet.0.1.bias to zeros
+Initialize postnet.postnet.1.1.bias to zeros
+Initialize postnet.postnet.2.1.bias to zeros
+Initialize postnet.postnet.3.1.bias to zeros
+Initialize postnet.postnet.4.1.bias to zeros
+pytorch.version=2.1.0+cu121, cuda.available=True, cudnn.version=8902, cudnn.benchmark=False, cudnn.deterministic=True
+Model structure:
+ESPnetTTSModel(
+  (feats_extract): LogMelFbank(
+    (stft): Stft(n_fft=8192, win_length=4096, hop_length=1024, center=True, normalized=False, onesided=True)
+    (logmel): LogMel(sr=48000, n_fft=8192, n_mels=160, fmin=0, fmax=24000, htk=False)
+  )
+  (pitch_extract): Dio()
+  (energy_extract): Energy(
+    (stft): Stft(n_fft=8192, win_length=4096, hop_length=1024, center=True, normalized=False, onesided=True)
+  )
+  (normalize): GlobalMVN(stats_file=exp/tts_stats_raw_char_None/train/feats_stats.npz, norm_means=True, norm_vars=True)
+  (pitch_normalize): GlobalMVN(stats_file=exp/tts_stats_raw_char_None/train/pitch_stats.npz, norm_means=True, norm_vars=True)
+  (energy_normalize): GlobalMVN(stats_file=exp/tts_stats_raw_char_None/train/energy_stats.npz, norm_means=True, norm_vars=True)
+  (tts): FastSpeech2(
+    (encoder): Encoder(
+      (embed): Sequential(
+        (0): Embedding(61, 384, padding_idx=0)
+        (1): ScaledPositionalEncoding(
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (encoders): MultiSequential(
+        (0): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (1): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (2): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (3): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (after_norm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+    )
+    (duration_predictor): DurationPredictor(
+      (conv): ModuleList(
+        (0): Sequential(
+          (0): Conv1d(384, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.1, inplace=False)
+        )
+        (1): Sequential(
+          (0): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (linear): Linear(in_features=256, out_features=1, bias=True)
+    )
+    (pitch_predictor): VariancePredictor(
+      (conv): ModuleList(
+        (0): Sequential(
+          (0): Conv1d(384, 256, kernel_size=(5,), stride=(1,), padding=(2,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.5, inplace=False)
+        )
+        (1-4): 4 x Sequential(
+          (0): Conv1d(256, 256, kernel_size=(5,), stride=(1,), padding=(2,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.5, inplace=False)
+        )
+      )
+      (linear): Linear(in_features=256, out_features=1, bias=True)
+    )
+    (pitch_embed): Sequential(
+      (0): Conv1d(1, 384, kernel_size=(1,), stride=(1,))
+      (1): Dropout(p=0.0, inplace=False)
+    )
+    (energy_predictor): VariancePredictor(
+      (conv): ModuleList(
+        (0): Sequential(
+          (0): Conv1d(384, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.5, inplace=False)
+        )
+        (1): Sequential(
+          (0): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+          (1): ReLU()
+          (2): LayerNorm((256,), eps=1e-12, elementwise_affine=True)
+          (3): Dropout(p=0.5, inplace=False)
+        )
+      )
+      (linear): Linear(in_features=256, out_features=1, bias=True)
+    )
+    (energy_embed): Sequential(
+      (0): Conv1d(1, 384, kernel_size=(1,), stride=(1,))
+      (1): Dropout(p=0.0, inplace=False)
+    )
+    (length_regulator): LengthRegulator()
+    (decoder): Encoder(
+      (embed): Sequential(
+        (0): ScaledPositionalEncoding(
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (encoders): MultiSequential(
+        (0): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (1): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (2): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+        (3): EncoderLayer(
+          (self_attn): MultiHeadedAttention(
+            (linear_q): Linear(in_features=384, out_features=384, bias=True)
+            (linear_k): Linear(in_features=384, out_features=384, bias=True)
+            (linear_v): Linear(in_features=384, out_features=384, bias=True)
+            (linear_out): Linear(in_features=384, out_features=384, bias=True)
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (feed_forward): MultiLayeredConv1d(
+            (w_1): Conv1d(384, 1536, kernel_size=(3,), stride=(1,), padding=(1,))
+            (w_2): Conv1d(1536, 384, kernel_size=(3,), stride=(1,), padding=(1,))
+            (dropout): Dropout(p=0.2, inplace=False)
+          )
+          (norm1): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (norm2): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.2, inplace=False)
+        )
+      )
+      (after_norm): LayerNorm((384,), eps=1e-12, elementwise_affine=True)
+    )
+    (feat_out): Linear(in_features=384, out_features=160, bias=True)
+    (postnet): Postnet(
+      (postnet): ModuleList(
+        (0): Sequential(
+          (0): Conv1d(160, 256, kernel_size=(5,), stride=(1,), padding=(2,), bias=False)
+          (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): Tanh()
+          (3): Dropout(p=0.5, inplace=False)
+        )
+        (1-3): 3 x Sequential(
+          (0): Conv1d(256, 256, kernel_size=(5,), stride=(1,), padding=(2,), bias=False)
+          (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): Tanh()
+          (3): Dropout(p=0.5, inplace=False)
+        )
+        (4): Sequential(
+          (0): Conv1d(256, 160, kernel_size=(5,), stride=(1,), padding=(2,), bias=False)
+          (1): BatchNorm1d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): Dropout(p=0.5, inplace=False)
+        )
+      )
+    )
+    (criterion): FastSpeech2Loss(
+      (l1_criterion): L1Loss()
+      (mse_criterion): MSELoss()
+      (duration_criterion): DurationPredictorLoss(
+        (criterion): MSELoss()
+      )
+    )
+  )
+)
+
+Model summary:
+    Class Name: ESPnetTTSModel
+    Total Number of model parameters: 37.35 M
+    Number of trainable parameters: 37.35 M (100.0%)
+    Size: 149.38 MB
+    Type: torch.float32
+Optimizer:
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    initial_lr: 1.0
+    lr: 2.0171788261496964e-07
+    maximize: False
+    weight_decay: 0
+)
+Scheduler: NoamLR(model_size=384, warmup_steps=4000)
+Saving the configuration in exp/tts_train_fastspeech2_raw_char_None/config.yaml
+[train] dataset:
+ESPnetDataset(
+  text: {"path": "dump/raw/tr_no_dev/text", "type": "text"}
+  durations: {"path": "/home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/tr_no_dev/durations", "type": "text_int"}
+  speech: {"path": "dump/raw/tr_no_dev/wav.scp", "type": "sound"}
+  pitch: {"path": "exp/tts_stats_raw_char_None/train/collect_feats/pitch.scp", "type": "npy"}
+  energy: {"path": "exp/tts_stats_raw_char_None/train/collect_feats/energy.scp", "type": "npy"}
+  preprocess: <espnet2.train.preprocessor.CommonPreprocessor object at 0x7df2b1978e50>)
+[train] Batch sampler: NumElementsBatchSampler(N-batch=182, batch_bins=3000000, sort_in_batch=descending, sort_batch=descending)
+[train] mini-batch sizes summary: N-batch=182, mean=9.3, min=1, max=23
+[valid] dataset:
+ESPnetDataset(
+  text: {"path": "dump/raw/dev/text", "type": "text"}
+  durations: {"path": "/home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/dev/durations", "type": "text_int"}
+  speech: {"path": "dump/raw/dev/wav.scp", "type": "sound"}
+  pitch: {"path": "exp/tts_stats_raw_char_None/valid/collect_feats/pitch.scp", "type": "npy"}
+  energy: {"path": "exp/tts_stats_raw_char_None/valid/collect_feats/energy.scp", "type": "npy"}
+  preprocess: <espnet2.train.preprocessor.CommonPreprocessor object at 0x7df2b06e0100>)
+[valid] Batch sampler: NumElementsBatchSampler(N-batch=7, batch_bins=3000000, sort_in_batch=descending, sort_batch=descending)
+[valid] mini-batch sizes summary: N-batch=7, mean=7.1, min=1, max=12
+[plot_att] dataset:
+ESPnetDataset(
+  text: {"path": "dump/raw/dev/text", "type": "text"}
+  durations: {"path": "/home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/dev/durations", "type": "text_int"}
+  speech: {"path": "dump/raw/dev/wav.scp", "type": "sound"}
+  pitch: {"path": "exp/tts_stats_raw_char_None/valid/collect_feats/pitch.scp", "type": "npy"}
+  energy: {"path": "exp/tts_stats_raw_char_None/valid/collect_feats/energy.scp", "type": "npy"}
+  preprocess: <espnet2.train.preprocessor.CommonPreprocessor object at 0x7df2b06e07c0>)
+[plot_att] Batch sampler: UnsortedBatchSampler(N-batch=50, batch_size=1, key_file=exp/tts_stats_raw_char_None/valid/text_shape.char, 
+[plot_att] mini-batch sizes summary: N-batch=3, mean=1.0, min=1, max=1
+/home/speechlab/espnet/tools/esp_venv/envs/espnet/bin/python3 /home/speechlab/espnet/espnet2/bin/tts_train.py --use_preprocessor true --token_type char --token_list dump/token_list/char_None/tokens.txt --non_linguistic_symbols none --cleaner None --g2p g2p_en_no_space --normalize global_mvn --resume true --fold_length 150 --fold_length 819200 --output_dir exp/tts_train_fastspeech2_raw_char_None --config conf/tuning/train_fastspeech2.yaml --train_data_path_and_name_and_type dump/raw/tr_no_dev/text,text,text --train_data_path_and_name_and_type /home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/tr_no_dev/durations,durations,text_int --train_shape_file exp/tts_stats_raw_char_None/train/text_shape.char --valid_data_path_and_name_and_type dump/raw/dev/text,text,text --valid_data_path_and_name_and_type /home/speechlab/Documents/Training_Fastspeech2_HS_Model-main/duration_info/dev/durations,durations,text_int --valid_shape_file exp/tts_stats_raw_char_None/valid/text_shape.char --feats_extract fbank --feats_extract_conf n_fft=8192 --feats_extract_conf hop_length=1024 --feats_extract_conf win_length=4096 --feats_extract_conf fs=48000 --feats_extract_conf fmin=0 --feats_extract_conf fmax=24000 --feats_extract_conf n_mels=160 --train_data_path_and_name_and_type dump/raw/tr_no_dev/wav.scp,speech,sound --train_shape_file exp/tts_stats_raw_char_None/train/speech_shape --valid_data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --valid_shape_file exp/tts_stats_raw_char_None/valid/speech_shape --train_data_path_and_name_and_type exp/tts_stats_raw_char_None/train/collect_feats/pitch.scp,pitch,npy --valid_data_path_and_name_and_type exp/tts_stats_raw_char_None/valid/collect_feats/pitch.scp,pitch,npy --train_data_path_and_name_and_type exp/tts_stats_raw_char_None/train/collect_feats/energy.scp,energy,npy --valid_data_path_and_name_and_type exp/tts_stats_raw_char_None/valid/collect_feats/energy.scp,energy,npy --pitch_extract_conf fs=48000 --pitch_extract_conf n_fft=8192 --pitch_extract_conf hop_length=1024 --pitch_extract_conf f0max=350 --pitch_extract_conf f0min=40 --pitch_normalize_conf stats_file=exp/tts_stats_raw_char_None/train/pitch_stats.npz --energy_extract_conf fs=48000 --energy_extract_conf n_fft=8192 --energy_extract_conf hop_length=1024 --energy_extract_conf win_length=4096 --energy_normalize_conf stats_file=exp/tts_stats_raw_char_None/train/energy_stats.npz --normalize_conf stats_file=exp/tts_stats_raw_char_None/train/feats_stats.npz --ngpu 1 --multiprocessing_distributed True
+/home/speechlab/espnet/espnet2/schedulers/noam_lr.py:41: UserWarning: NoamLR is deprecated. Use WarmupLR(warmup_steps=4000) with Optimizer(lr=0.0008068715304598786)
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/speechlab/espnet/espnet2/bin/tts_train.py", line 22, in <module>
+    main()
+  File "/home/speechlab/espnet/espnet2/bin/tts_train.py", line 18, in main
+    TTSTask.main(cmd=cmd)
+  File "/home/speechlab/espnet/espnet2/tasks/abs_task.py", line 1192, in main
+    cls.main_worker(args)
+  File "/home/speechlab/espnet/espnet2/tasks/abs_task.py", line 1533, in main_worker
+    cls.trainer.run(
+  File "/home/speechlab/espnet/espnet2/train/trainer.py", line 276, in run
+    cls.resume(
+  File "/home/speechlab/espnet/espnet2/train/trainer.py", line 163, in resume
+    states = torch.load(
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 1014, in load
+    return _load(opened_zipfile,
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 1422, in _load
+    result = unpickler.load()
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 1392, in persistent_load
+    typed_storage = load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 1366, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 1296, in restore_location
+    return default_restore_location(storage, map_location)
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 381, in default_restore_location
+    result = fn(storage, location)
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/serialization.py", line 279, in _cuda_deserialize
+    return obj.cuda(device)
+  File "/home/speechlab/espnet/tools/esp_venv/envs/espnet/lib/python3.8/site-packages/torch/_utils.py", line 114, in _cuda
+    untyped_storage = torch.UntypedStorage(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacty of 23.67 GiB of which 55.50 MiB is free. Process 3185383 has 22.57 GiB memory in use. Including non-PyTorch memory, this process has 712.00 MiB memory in use. Of the allocated memory 360.76 MiB is allocated by PyTorch, and 103.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+# Accounting: time=6 threads=1
+# Ended (code 1) at Wed Aug  6 09:24:35 IST 2025, elapsed time 6 seconds
