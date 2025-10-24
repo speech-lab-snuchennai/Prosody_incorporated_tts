@@ -46,10 +46,34 @@ cd prosody-tts
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Activate the conda environment
+##############################################
+# Prosody-Incorporated TTS Environment Setup #
+##############################################
+
+# 3. Navigate to the FastSpeech2 folder
+cd Fastspeech2_HS
+
+# 4. Create a new conda environment from the YAML file
+conda env create -f environment.yml
+
+# 5. Activate the environment
 conda activate tts-hs-hifigan
 
-# 4. Run the Streamlit app
+# 6. Install PyTorch and CUDA Toolkit
+conda install pytorch cudatoolkit -c pytorch
+
+# 7. Install torchaudio
+pip install torchaudio
+
+# 8. Install additional required Python packages
+pip install streamlit praat-parselmouth flask requests espnet matplotlib pandas indic-num2words gunicorn
+
+# 9. Go back to the main project directory
+cd ../
+
+#Environment setup complete for Prosody-Incorporated TTS
+
+# 10. Run the Streamlit app
 streamlit run prosody_tts_emotions.py
 # ------------------------------------------------------------
 
@@ -140,4 +164,5 @@ streamlit run prosody_tts_emotions.py
 # © 2025 Shiv Nadar University Chennai.
 # All Rights Reserved.
 # ------------------------------------------------------------
+
 
