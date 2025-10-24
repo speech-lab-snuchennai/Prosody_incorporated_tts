@@ -4,3 +4,4 @@ Fastspeech2_HS/tamil/male/model/1000epoch.pth filter=lfs diff=lfs merge=lfs -tex
 Fastspeech2_HS/tamil/male/model/*.npz filter=lfs diff=lfs merge=lfs -text
 Fastspeech2_HS_proso/exp/tts_train_fastspeech2_raw_char_None/1000epoch.pth filter=lfs diff=lfs merge=lfs -text
 Fastspeech2_HS_proso/tamil/male/model/1000epoch.pth filter=lfs diff=lfs merge=lfs -text
+Fastspeech2_HS_proso/tamil/male/model/*.npz filter=lfs diff=lfs merge=lfs -text
