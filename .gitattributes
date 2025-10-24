@@ -1,1 +1,2 @@
 Fastspeech2_HS/cp-hifi-tamil/cp_hifigan_00245000 filter=lfs diff=lfs merge=lfs -text
+Fastspeech2_HS/exp/tts_train_fastspeech2_raw_char_None/1000epoch.pth filter=lfs diff=lfs merge=lfs -text
