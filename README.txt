@@ -40,7 +40,7 @@
 # ------------------------------------------------------------
 
 # 1. Clone the repository
-git clone https://github.com/<your-username>/prosody-tts.git
+git clone https://github.com/speech-lab-snuchennai/prosody-tts.git
 cd prosody-tts
 
 # 2. Install dependencies
@@ -140,3 +140,4 @@ streamlit run prosody_tts_emotions.py
 # © 2025 Shiv Nadar University Chennai.
 # All Rights Reserved.
 # ------------------------------------------------------------
+
